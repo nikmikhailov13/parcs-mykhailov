@@ -1,11 +1,12 @@
 import java.math.BigInteger;
-import parcs.*;
+import parcs.AM;
+import parcs.AMInfo;
 
 class Fermat implements AM {
 
   private static final BigInteger ONE = BigInteger.ONE;
 
-  void run(AMInfo info) {
+  public void run(AMInfo info) {
     BigInteger n = (BigInteger) info.parent.readObject();
     BigInteger res1 = FermatFactor(n);
     BigInteger res2 = n.divide(res1);

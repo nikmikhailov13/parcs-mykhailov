@@ -4,23 +4,25 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.Scanner;
-import parcs.*;
+import parcs.AM;
+import parcs.AMInfo;
+import parcs.task;
 
 public class Main implements AM {
 
   public static void main(String[] args) {
-    var curtask = new task();
-    curtask.addJarFile("Fermat.jar");
+    var curTask = new task();
+    curTask.addJarFile("Fermat.jar");
 
     var fermat = new Fermat();
-    fermat.run(new AMInfo(curtask, (channel) null));
-    curtask.end();
+    fermat.run(new AMInfo(curTask, null));
+    curTask.end();
   }
 
   public void run(AMInfo info) {
     BigInteger num1;
     BigInteger num2;
-    BigInteger n;
+    BigInteger n = null;
     try {
       try (var sc = new Scanner(new File(info.curtask.findFile("Fermat.data")))) {
         n = sc.nextBigInteger();

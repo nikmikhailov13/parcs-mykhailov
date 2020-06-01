@@ -5,7 +5,7 @@ clean:
 
 Fermat.jar: out/parcs.jar src/main/*.java
 	@javac -cp out/parcs.jar src/main/*.java
-	@jar cf out/Fermat.jar -C src .
+	@jar cf out/Fermat.jar -C src/main .
 	@rm -f src/main/*.class
 
 run: Fermat.jar
